@@ -23,10 +23,10 @@ export const copySnippet = `def process_links():
         else:
             if "." in line and " " not in line:
                 links.append(f"https://{line}")
-    print("\nDetected links:")
+    print("Detected links:")
     for link in links:
         print(link)
-    print(f"\nTotal links found: {len(links)}")
+    print(f"Total links found: {len(links)}")
 if __name__ == "__main__":
     process_links()
 `;
