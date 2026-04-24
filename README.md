@@ -1,19 +1,24 @@
-# TWC
-TWC is a clean shortcut hub built with Next.js. It includes a responsive home page, a searchable shortcuts page, and a polished light/dark interface with animated visuals.
+# TWC v2.1.2
+TWC is a clean shortcut hub built with Next.js. It includes a polished home page, a searchable shortcuts dashboard, a study guide page, and a customizable light and dark interface.
 
 ## Features
-- Home page with a short description and branded landing view
+- Home page with a branded landing view
 - Searchable shortcuts dashboard
-- Responsive layout for desktop, tablet, and phone
-- Light and dark theme toggle
-- Fast, glass-style UI with animation
-- Easy-to-edit shortcut data files
+- Study guide page with a structured revision plan
+- Responsive layout for desktop, iPad, and phone
+- Light and dark mode
+- Accent color settings
+- Toggle placement settings for the theme switch
+- Easy-to-edit shortcut and study guide data files
 
 ## Project structure
 - `app/page.js` — home page
 - `app/shortcuts/page.js` — shortcuts dashboard
+- `app/study-guide/page.js` — study guide
+- `app/settings/page.js` — settings page
 - `components/` — reusable UI pieces
 - `data/shortcuts.js` — add or edit shortcuts here
+- `data/studyGuide.js` — update the study guide
 
 ## Add more shortcuts
 Open `data/shortcuts.js` and add another item to `publicShortcuts`. Each shortcut supports:
