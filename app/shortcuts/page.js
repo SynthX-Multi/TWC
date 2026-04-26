@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import ShortcutCard from "../../components/ShortcutCard";
-import { publicShortcuts } from "../../data/shortcuts";
+import ComingSoonCard from "../../components/ComingSoonCard";
+import { publicShortcuts, moreComingSoon } from "../../data/shortcuts";
 
 export default function ShortcutsPage() {
   const [query, setQuery] = useState("");
@@ -21,7 +22,7 @@ export default function ShortcutsPage() {
   return (
     <section className="page-section">
       <div className="section-heading">
-        <span className="eyebrow">Launcher</span>
+        <span className="eyebrow">Dashboard</span>
         <h1>Shortcuts</h1>
         <p>Search and open your favorite apps from one place.</p>
       </div>
@@ -41,6 +42,7 @@ export default function ShortcutsPage() {
         {filteredShortcuts.map((shortcut, index) => (
           <ShortcutCard key={shortcut.name} shortcut={shortcut} index={index} />
         ))}
+        <ComingSoonCard index={filteredShortcuts.length} item={moreComingSoon} />
       </div>
     </section>
   );

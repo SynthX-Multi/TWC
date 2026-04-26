@@ -1,7 +1,8 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import ThemeToggle from "../components/ThemeToggle";
 import AnimatedBackground from "../components/AnimatedBackground";
+import { ThemeProvider } from "../components/ThemeProvider";
+import ThemeToggle from "../components/ThemeToggle";
 
 export const metadata = {
   title: "TWC",
@@ -12,10 +13,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <AnimatedBackground />
-        <Navbar />
-        <ThemeToggle />
-        <main className="page-shell">{children}</main>
+        <ThemeProvider>
+          <AnimatedBackground />
+          <Navbar />
+          <ThemeToggle placement="floating" />
+          <main className="page-shell">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

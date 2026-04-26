@@ -9,9 +9,9 @@ export default function Home() {
       </div>
 
       <div className="hero-copy">
-        <span className="eyebrow">
+        <span className="eyebrow beta-tag">
           <Sparkles size={15} />
-          Shortcut command center
+          Beta release. Please expect bugs.
         </span>
         <h1>One clean place for the apps you open most.</h1>
         <p>

@@ -1,32 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { MoonStar, SunMedium } from "lucide-react";
+import { useThemeSettings } from "./ThemeProvider";
 
-export default function ThemeToggle() {
-  const [dark, setDark] = useState(false);
+export default function ThemeToggle({ placement = "floating" }) {
+  const { ready, mode, toggleMode, togglePlacement } = useThemeSettings();
 
-  useEffect(() => {
-    const saved = localStorage.getItem("twc-theme");
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-    const isDark = saved ? saved === "dark" : prefersDark;
-    setDark(isDark);
-  }, []);
-
-  useEffect(() => {
-    document.body.classList.toggle("dark", dark);
-    localStorage.setItem("twc-theme", dark ? "dark" : "light");
-  }, [dark]);
+  if (!ready || togglePlacement !== placement) return null;
 
   return (
     <button
       type="button"
-      className="icon-button theme-toggle"
-      onClick={() => setDark((value) => !value)}
-      aria-label="Toggle theme"
-      title="Toggle theme"
+      className={placement === "navbar" ? "icon-button theme-inline" : "icon-button theme-floating"}
+      onClick={toggleMode}
+      aria-label="Toggle light and dark mode"
+      title="Toggle light and dark mode"
     >
-      {dark ? <SunMedium size={18} /> : <MoonStar size={18} />}
+      {mode === "dark" ? <SunMedium size={18} /> : <MoonStar size={18} />}
     </button>
   );
 }
