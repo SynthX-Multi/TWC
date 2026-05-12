@@ -25,7 +25,7 @@ export default function SettingsPage() {
           Settings
         </span>
         <h1>Appearance</h1>
-        <p>Customize the UI to your liking.</p>
+        <p>Change the accent theme and decide where the light and dark toggle lives.</p>
       </div>
 
       <div className="settings-grid">
@@ -34,7 +34,7 @@ export default function SettingsPage() {
             <Palette size={18} />
             <h2>Theme color</h2>
           </div>
-          <p>Choose your preferred theme.</p>
+          <p>Choose a color family for the interface accents.</p>
           <div className="color-grid">
             {colorOptions.map((item) => (
               <button
@@ -55,7 +55,7 @@ export default function SettingsPage() {
             <ToggleLeft size={18} />
             <h2>Toggle placement</h2>
           </div>
-          <p>Customize the light and dark toggle button.</p>
+          <p>Keep the light and dark button floating or place it inside the navigator bar.</p>
           <div className="placement-grid">
             <button
               type="button"
